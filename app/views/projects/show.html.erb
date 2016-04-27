@@ -1,0 +1,5 @@
+<%= link_to "Home", root_path %>
+<%= link_to "Edit project", edit_project_path(@project) %>
+<%= link_to "Delete", project_path(@project), method: :delete, data: { confirm: 'Are you sure?' } %>
+<h1><%= @project.title %></h1>
+<h2><%= @project.description %></h2>
