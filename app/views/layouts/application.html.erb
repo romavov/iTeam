@@ -7,6 +7,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <%= link_to 'Project Board', root_path, class: 'navbar-brand' %>
+      </div>
+      <ul class='nav navbar-nav'>
+        <li>
+          <%= link_to 'Sign Up', new_user_registration_path %>
+        </li>
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to 'Sign out', destroy_user_session_path, pethod: :delete %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to 'Log In', new_user_session_path %>
+          </li>
+        <% end %>
+      </ul>
+      <% if user_signed_in? %>
+        <%= link_to 'New project', new_project_path, class: 'navbar-right navbar-text navbar-link' %>
+      <% end %>
+    </div>
+  </div>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <%= yield %>
