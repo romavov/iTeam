@@ -1,5 +1,13 @@
-source 'https://rubygems.org'
+-----------------------------------------------
+===============================================
+gem 'devise'
 
-gem 'simple_form' https://github.com/twbs/bootstrap-sass
+rails g devise:install
 
-gem 'bootstrap-sass' https://github.com/plataformatec/simple_form
+rails g devise:views
+
+rails g devise User
+
+rake db:migrate
+
+-----------------------------------------------
