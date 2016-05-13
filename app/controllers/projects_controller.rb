@@ -8,6 +8,9 @@ class ProjectsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
   def new
     @project = Project.new
   end
@@ -19,9 +22,6 @@ class ProjectsController < ApplicationController
     else
       render 'new'
     end
-  end
-
-  def edit
   end
 
   def update
